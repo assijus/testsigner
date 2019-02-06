@@ -1,7 +1,10 @@
 package br.jus.trf2.testsigner;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.sql.SQLException;
+
+import com.crivano.swaggerservlet.SwaggerServlet;
 
 import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdPdfGetRequest;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdPdfGetResponse;
@@ -12,8 +15,8 @@ public class DocIdPdfGet implements IDocIdPdfGet {
 	@Override
 	public void run(DocIdPdfGetRequest req, DocIdPdfGetResponse resp) throws Exception {
 		PdfData pdfd = retrievePdf(req.id, req.cpf);
-		resp.doc = pdfd.pdf;
-		resp.secret = pdfd.secret;
+		resp.inputstream = new ByteArrayInputStream(pdfd.pdf);
+		SwaggerServlet.getHttpServletResponse().addHeader("Doc-Secret", pdfd.secret);
 	}
 
 	protected static PdfData retrievePdf(String id, String cpf) throws Exception, SQLException {
