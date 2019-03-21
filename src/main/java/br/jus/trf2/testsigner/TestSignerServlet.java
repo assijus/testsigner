@@ -13,13 +13,10 @@ public class TestSignerServlet extends SwaggerServlet {
 	private static final long serialVersionUID = -1611417120964698257L;
 
 	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-
-		super.setAPI(IAssijusSystem.class);
-
-		super.setActionPackage("br.jus.trf2.testsigner");
-
-		super.setAuthorization(SwaggerUtils.getProperty("testsigner.password", null));
+	public void initialize(ServletConfig config) throws ServletException {
+		setAPI(IAssijusSystem.class);
+		setActionPackage("br.jus.trf2.testsigner");
+		addPrivateProperty("password", null);
+		setAuthorization(getProperty("password"));
 	}
 }
