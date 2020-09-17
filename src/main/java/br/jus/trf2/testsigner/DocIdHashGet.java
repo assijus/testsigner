@@ -12,9 +12,10 @@ public class DocIdHashGet implements IDocIdHashGet {
 		// Produce response
 		resp.sha1 = Utils.calcSha1(pdfd.pdf);
 		resp.sha256 = Utils.calcSha256(pdfd.pdf);
-
 		resp.doc = pdfd.pdf;
 		resp.secret = pdfd.secret;
+
+		resp.policy = "AD-RB";
 	}
 
 	@Override

@@ -4,8 +4,6 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 
 import com.crivano.swaggerservlet.SwaggerServlet;
-import com.crivano.swaggerservlet.SwaggerUtils;
-import com.crivano.swaggerservlet.dependency.TestableDependency;
 
 import br.jus.trf2.assijus.system.api.IAssijusSystem;
 

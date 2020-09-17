@@ -1,30 +1,10 @@
 package br.jus.trf2.testsigner;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.zip.DataFormatException;
-import java.util.zip.Deflater;
-import java.util.zip.Inflater;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NameNotFoundException;
-import javax.sql.DataSource;
-
-import com.crivano.swaggerservlet.SwaggerUtils;
 
 public class Utils {
 	public static byte[] convertStreamToByteArray(InputStream stream, long size) throws IOException {

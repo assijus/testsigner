@@ -1,15 +1,8 @@
 package br.jus.trf2.testsigner;
 
-import java.io.ByteArrayInputStream;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.Types;
-
 import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdSignPutRequest;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdSignPutResponse;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.IDocIdSignPut;
-
-import com.crivano.swaggerservlet.SwaggerUtils;
 
 public class DocIdSignPut implements IDocIdSignPut {
 
