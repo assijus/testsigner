@@ -1,12 +1,11 @@
 package br.jus.trf2.testsigner;
 
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdHashGetRequest;
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdHashGetResponse;
+import br.jus.trf2.assijus.system.api.AssijusSystemContext;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.IDocIdHashGet;
 
 public class DocIdHashGet implements IDocIdHashGet {
 	@Override
-	public void run(DocIdHashGetRequest req, DocIdHashGetResponse resp) throws Exception {
+	public void run(Request req, Response resp, AssijusSystemContext ctx) throws Exception {
 		PdfData pdfd = DocIdPdfGet.retrievePdf(req.id, req.cpf);
 
 		// Produce response

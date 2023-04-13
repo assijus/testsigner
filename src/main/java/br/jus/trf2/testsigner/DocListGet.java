@@ -2,8 +2,7 @@ package br.jus.trf2.testsigner;
 
 import java.util.ArrayList;
 
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocListGetRequest;
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocListGetResponse;
+import br.jus.trf2.assijus.system.api.AssijusSystemContext;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.Document;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.IDocListGet;
 
@@ -12,7 +11,7 @@ public class DocListGet implements IDocListGet {
 			"13" };
 
 	@Override
-	public void run(DocListGetRequest req, DocListGetResponse resp) throws Exception {
+	public void run(Request req, Response resp, AssijusSystemContext ctx) throws Exception {
 		resp.list = new ArrayList<>();
 
 		for (String s : DOCS) {

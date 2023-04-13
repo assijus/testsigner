@@ -6,14 +6,13 @@ import java.sql.SQLException;
 
 import com.crivano.swaggerservlet.SwaggerServlet;
 
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdPdfGetRequest;
-import br.jus.trf2.assijus.system.api.IAssijusSystem.DocIdPdfGetResponse;
+import br.jus.trf2.assijus.system.api.AssijusSystemContext;
 import br.jus.trf2.assijus.system.api.IAssijusSystem.IDocIdPdfGet;
 
 public class DocIdPdfGet implements IDocIdPdfGet {
 
 	@Override
-	public void run(DocIdPdfGetRequest req, DocIdPdfGetResponse resp) throws Exception {
+	public void run(Request req, Response resp, AssijusSystemContext ctx) throws Exception {
 		PdfData pdfd = retrievePdf(req.id, req.cpf);
 		resp.inputstream = new ByteArrayInputStream(pdfd.pdf);
 		resp.contenttype = req.id.equals("13") ? "text/html" : "application/pdf";

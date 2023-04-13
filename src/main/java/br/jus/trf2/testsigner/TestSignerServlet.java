@@ -14,6 +14,7 @@ public class TestSignerServlet extends SwaggerServlet {
 	public void initialize(ServletConfig config) throws ServletException {
 		setAPI(IAssijusSystem.class);
 		setActionPackage("br.jus.trf2.testsigner");
+		setApiContextClass(AssijusSystemContext.class);
 		addPrivateProperty("password", null);
 		setAuthorization(getProperty("password"));
 	}
